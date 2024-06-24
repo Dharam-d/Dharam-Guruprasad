@@ -1,27 +1,42 @@
-package com.model;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+package com.wipro;
 
 public class Date {
-	
-	    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    private int intDay, intMonth, intYear;
 
-	    public static String formatDate(Date date) {
-	        if (date != null) {
-	            return dateFormat.format(date);
-	        } else {
-	            return null;
-	        }
-	    }
+    // Constructor
+    public Date(int intDay, int intMonth, int intYear) {
+        this.intDay = intDay;
+        this.intMonth = intMonth;
+        this.intYear = intYear;
+    }
 
-	    public static  java.util.Date parseDate(String dateStr) throws ParseException {
-	        if (dateStr != null && !dateStr.isEmpty()) {
-	            return dateFormat.parse(dateStr);
-	        } else {
-	            return null;
-	        }
-	    }
-	}
+    // Setter and Getter methods for day, month, and year
+    public void setDay(int intDay) {
+        this.intDay = intDay;
+    }
 
+    public int getDay() {
+        return this.intDay;
+    }
 
+    public void setMonth(int intMonth) {
+        this.intMonth = intMonth;
+    }
+
+    public int getMonth() {
+        return this.intMonth;
+    }
+
+    public void setYear(int intYear) {
+        this.intYear = intYear;
+    }
+
+    public int getYear() {
+        return this.intYear;
+    }
+
+    // toString method to convert Date object to string
+    public String toString() {
+        return "Date is " + intDay + "/" + intMonth + "/" + intYear;
+    }
+}
